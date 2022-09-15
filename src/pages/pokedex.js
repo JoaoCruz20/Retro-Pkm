@@ -2,12 +2,8 @@ import React, {useEffect} from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import ImageHolder from "../components/ImageHolder";
-import IntroBattle from "../assets/images/intro-battle.gif";
-import IntroBattleMusic from "../assets/music/intro-battle-music.mp3";
-import SpeakerIcon from "../assets/icons/speaker.png";
-
-
-
+import Heart from "../assets/images/pikachu-heart.gif";
+import GymLeaderBattle from "../assets/music/gym-leader-battle.mp3"; //.mid files do not work, must convert
 
 const Body = styled.div`
     height:2000px;
@@ -27,37 +23,33 @@ const CenterBody = styled.div`
 `;
 
 const MusicButton = styled.button`
-    background-image: url(${SpeakerIcon});
     height: 50px;
     width: 50px;
     border-radius: 30px;
     margin: 0 0 0 2.5%;
 `;
 
-
- const Home = () => {
+const Pokedex = () => { 
 
     useEffect(() => {
-       PlayMusic()
-      }); 
-
-      const PlayMusic = () => {
-      var audio = new Audio(IntroBattleMusic);
-        audio.play();
-      }
-
+        PlayMusic()
+       }); 
+ 
+       const PlayMusic = () => {
+       var audio = new Audio(GymLeaderBattle);
+         audio.play();
+       }
+       
     return (
         <Body>
-         <Navbar>
-         </Navbar>
+         <Navbar />
          <MusicButton onClick={PlayMusic} />
-         <Title>Welcome to Retro Pokemon</Title>
+         <Title>Hello World</Title>
          <CenterBody>
-            <ImageHolder src={IntroBattle} alt="Pokemon Intro"></ImageHolder>
-        </CenterBody>
-        
+         <ImageHolder src={Heart} alt="Pokemon Intro"></ImageHolder>
+         </CenterBody>
         </Body>
-    );
-  }
-  
-  export default Home;
+        );
+ }
+
+export default Pokedex;
