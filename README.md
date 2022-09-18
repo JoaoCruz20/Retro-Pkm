@@ -36,14 +36,24 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - redux
 - react router
 - styled components
-- prettier
-- eslint
+
 
 ### `To be added
 
 - docker
-- next
+- express.js
+- mongo.db
+
+
+### `API to use
+
+-https://pokeapi.co/
 
 WireFrames
 
 https://www.figma.com/file/lPJPChaEfO7LpRYKz3wU0u/Untitled?node-id=1%3A2
+
+Color Palette
+
+-created with coloors.com
+-based on the intro gif

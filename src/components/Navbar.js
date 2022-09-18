@@ -13,31 +13,20 @@ margin: 0% 1% 1% 1%;
 border-radius: 15px;
 list-style-type: none;
 overflow: hidden;
-background-color: #38444d;
+
 
 li {
     display: inline-flex;
     justify-content: flex-start;
 }
 a {    
-     color: white;
+     color: #acacacff;
      padding: 10px 10px 10px 10px;
      font-size: 18px;
      font-family: "Pkmn", Times, serif;
   }
 `;
 
-const LoginContainer = styled.div`
-a { 
-    display:flex;
-    flex-direction: row-reverse;
-    color: white;
-    padding: 10px 10px 10px 10px;
-    font-size: 18px;
-    font-family: "Pkmn", Times, serif;
- }
-
-`
 
 
 
