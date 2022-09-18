@@ -1,23 +1,14 @@
 
 
-componentDidMount() {
-    fetch("https://api.example.com/items")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result.items
-          });
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
+fetch('https://pokeapi.co/api/v2/pokemon', {
+  method: 'GET',  
+})
+  .then(res => {
+      if(res.ok){
+          console.log("Success")
+  } else {
+      console.log("not succesfull")
   }
+  res.json()})
+  .then(data => console.log(data))
+  .catch(error => console.log('ERROR'))

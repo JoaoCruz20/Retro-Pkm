@@ -1,14 +1,13 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 import ImageHolder from "../components/ImageHolder";
 import TextHolder from "../components/TextHolder";
 import IntroBattle from "../assets/images/intro-battle.gif";
 import GameBoy from "../assets/images/gameboy-color.png";
 import IntroBattleMusic from "../assets/music/intro-battle-music.mp3";
 import SpeakerIcon from "../assets/icons/speaker.png";
-
-
 
 
 const Body = styled.div`
@@ -73,8 +72,7 @@ const paragraphText = "Lorem Ipsum is simply dummy text of the printing and type
                 <img style={{zIndex: 3}} src={IntroBattle} alt="Pokemon Intro"></img>
             </ImageHolder>
         </SecondBody>
-
-        
+        <Footer />
         </Body>
     );
   }
