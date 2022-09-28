@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import ImageHolder from "../components/ImageHolder";
 import Heart from "../assets/images/pikachu-heart.gif";
 import GymLeaderBattle from "../assets/music/gym-leader-battle.mp3"; //.mid files do not work, must convert
+import { getLogin } from "../backend/pkmApiCall";
 
 const Body = styled.div`
     background-color: black;
@@ -34,17 +35,12 @@ const MusicButton = styled.button`
 `;
 
 const Pokedex = () => { 
- const [payload, setPayload] = useState(null);
+    let data;
+    
 
-    const fetchData = () => {
-        fetch('https://pokeapi.co/api/v2/pokemon')
-            .then(res => res.json())
-            .then(data => setPayload(data))
-            .catch(error => console.log('ERROR'))
-    }
-
-    useEffect(() => {
-        fetchData();  
+   useEffect(() => {
+        data = getLogin()
+        console.log(data)
     }, []);     
  
        const PlayMusic = () => {
@@ -60,7 +56,7 @@ const Pokedex = () => {
          <CenterBody>
          <ImageHolder src={Heart} alt="Pokemon Intro"></ImageHolder>
          </CenterBody>
-         <PokedexBody>{payload?.results.map((pokemon, key) =>             
+         <PokedexBody>{data?.results.map((pokemon, key) =>             
             <h1 style={{color:"white", padding: "20px",
             margin: "20px"}} key={key}>{pokemon.name}</h1>
          )}</PokedexBody>

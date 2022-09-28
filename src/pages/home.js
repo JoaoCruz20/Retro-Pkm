@@ -69,7 +69,7 @@ const paragraphText = "Lorem Ipsum is simply dummy text of the printing and type
         <SecondBody>
             <TextHolder title="Introducing the Idea" paragraph={paragraphText}/>
             <ImageHolder src={GameBoy} alt="Gameboy" width="330px" height="600px">
-                <img style={{zIndex: 3}} src={IntroBattle} alt="Pokemon Intro"></img>
+                <ImageHolder style={{zIndex: 3}} src={IntroBattle} alt="Pokemon Intro"></ImageHolder>
             </ImageHolder>
         </SecondBody>
         <Footer />
