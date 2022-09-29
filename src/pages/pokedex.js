@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import ImageHolder from "../components/ImageHolder";
 import Heart from "../assets/images/pikachu-heart.gif";
-import GymLeaderBattle from "../assets/music/gym-leader-battle.mp3"; //.mid files do not work, must convert
+import GymLeaderBattle from "../assets/music/gym-leader-battle.mp3";
 import useFetch from "../backend/useFetch";
 
 const Body = styled.div`

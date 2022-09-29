@@ -36,13 +36,19 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - redux
 - react router
 - styled components
+- mongo.db
 
+### `Backend 
+
+-express.js
+-cors
+-nodemon
 
 ### `To be added
 
 - docker
-- express.js
-- mongo.db
+- mongooose
+- jest 
 
 
 ### `API to use

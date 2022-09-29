@@ -10,6 +10,7 @@ import Pokedex from './pages/pokedex';
 import Login from './pages/login';
 import Games from './pages/games';
 import AboutMe from './pages/about-me';
+import Express from './pages/express';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route caseSensitive={false} path="/about-me" exact component={<AboutMe />}>
           <AboutMe/>
+        </Route>
+        <Route caseSensitive={false} path="/express-test" exact component={<Express />}>
+          <Express/>
         </Route>
       </Switch>
     </Router>
