@@ -46,8 +46,6 @@ const Login = () => {
              <input type="text" id="username" name="username" />
              <label for="password">Password</label>
              <input type="password" id="password" name="password" />
-             <label for="checkbox">Checkbox</label>
-             <input type="checkbox" id="checkbox" name="checkbox" />
         </LoginForm>
         <LoginButton>Login</LoginButton>
      </LoginContainer>

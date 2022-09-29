@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import LoginForm from "../components/LoginForm";
+import useLogin from "../backend/login";
 
 const Body = styled.div`
     padding: 30px 0 0 0;
@@ -20,6 +21,7 @@ const CenterBody = styled.div`
 
 const Login = () => { 
     
+    useLogin()
     
     return (
     <Body>

@@ -1,17 +1,11 @@
+import {useEffect, useState} from "react";
+import useFetch from "./useFetch";
 
+export const useLogin = () => {
 
-const getLoginData = () => {
-    fetch('https://pokeapi.co/api/v2/pokemon', {
-      method: 'GET',  
-    })
-      .then(res => {
-          if(res.ok){
-              console.log("Success")
-      } else {
-          console.log("not succesfull")
-      }
-      res.json()})
-      .then(data => console.log(data))
-      .catch(error => console.log('ERROR'))
-    
+    const {data, loading, error} = useFetch("https://data.mongodb-api.com/app/data-xzaau/endpoint/data/v1")
+    console.log(data);
+   
 }
+
+export default useLogin;

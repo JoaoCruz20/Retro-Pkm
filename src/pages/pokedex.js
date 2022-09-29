@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import ImageHolder from "../components/ImageHolder";
 import Heart from "../assets/images/pikachu-heart.gif";
 import GymLeaderBattle from "../assets/music/gym-leader-battle.mp3"; //.mid files do not work, must convert
-import { getLogin } from "../backend/pkmApiCall";
+import useFetch from "../backend/useFetch";
 
 const Body = styled.div`
     background-color: black;
@@ -25,6 +25,12 @@ const CenterBody = styled.div`
 const PokedexBody = styled.div`    
     display:flex;
     flex-wrap: wrap;
+
+    h1 {
+        color: white;
+        padding: 20px;
+        margin: 20px;
+    }
 `;
 
 const MusicButton = styled.button`
@@ -35,13 +41,9 @@ const MusicButton = styled.button`
 `;
 
 const Pokedex = () => { 
-    let data;
-    
 
-   useEffect(() => {
-        data = getLogin()
-        console.log(data)
-    }, []);     
+     const { data , loading, err } =  useFetch("https://pokeapi.co/api/v2/pokemon");
+     console.log(data)
  
        const PlayMusic = () => {
        var audio = new Audio(GymLeaderBattle);
@@ -49,17 +51,16 @@ const Pokedex = () => {
        }
        
     return (
-        <Body>
+         <Body>
          <Navbar />
          <MusicButton onClick={PlayMusic} />
          <Title>Retro Pokedex</Title>
          <CenterBody>
          <ImageHolder src={Heart} alt="Pokemon Intro"></ImageHolder>
          </CenterBody>
-         <PokedexBody>{data?.results.map((pokemon, key) =>             
-            <h1 style={{color:"white", padding: "20px",
-            margin: "20px"}} key={key}>{pokemon.name}</h1>
-         )}</PokedexBody>
+         {!loading && data && <PokedexBody>{data?.results.map((pokemon, key) =>             
+            <h1 key={key}>{pokemon.name}</h1>
+         )}</PokedexBody>}
         </Body>
         );
  }
