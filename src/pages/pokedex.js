@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import ImageHolder from "../components/ImageHolder";
+import Card from "../components/Card";
+import Pagination from "../components/Pagination";
 import Heart from "../assets/images/pikachu-heart.gif";
 import GymLeaderBattle from "../assets/music/gym-leader-battle.mp3";
 import useFetch from "../backend/useFetch";
@@ -25,11 +27,11 @@ const CenterBody = styled.div`
 const PokedexBody = styled.div`    
     display:flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 50px 5% 0 5%;
 
     h1 {
         color: white;
-        padding: 20px;
-        margin: 20px;
     }
 `;
 
@@ -40,10 +42,12 @@ const MusicButton = styled.button`
     margin: 0 0 0 4%;
 `;
 
+let page = 0;
+
 const Pokedex = () => { 
 
-     const { data , loading, err } =  useFetch("https://pokeapi.co/api/v2/pokemon");
-     console.log(data)
+     const { data , loading, err } =  useFetch(`https://pokeapi.co/api/v2/pokemon/?offset=${page}&limit=20`);
+    // console.log(data)
  
        const PlayMusic = () => {
        var audio = new Audio(GymLeaderBattle);
@@ -58,9 +62,13 @@ const Pokedex = () => {
          <CenterBody>
          <ImageHolder src={Heart} alt="Pokemon Intro"></ImageHolder>
          </CenterBody>
-         {!loading && data && <PokedexBody>{data?.results.map((pokemon, key) =>             
-            <h1 key={key}>{pokemon.name}</h1>
-         )}</PokedexBody>}
+         {!loading && data && <PokedexBody>
+            {data?.results.map((pokemon, key) => 
+            <Card key={key} url={pokemon.url}  name={pokemon.name}  />
+         )}
+
+         </PokedexBody>}
+         <Pagination />
         </Body>
         );
  }
