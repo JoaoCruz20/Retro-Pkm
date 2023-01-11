@@ -30,12 +30,13 @@ const Navbar = (props) => {
 
     return (    
         <Container>
-            <li><a href="http://localhost:3000/">Home</a></li>
-            <li><a href="http://localhost:3000/pokedex">Pokedex</a></li>
-            <li><a href="http://localhost:3000/games">Games</a></li>
-            <li><a href="http://localhost:3000/about-me">About Me</a></li>
+            <li><a href="http://localhost:3000/Retro-Pkm">Home</a></li>
+            <li><a href="http://localhost:3000/Retro-Pkm/pokedex">Pokedex</a></li>
+            <li><a href="http://localhost:3000/Retro-Pkm/games">Games</a></li>
+            <li><a href="http://localhost:3000/Retro-Pkm/about-me">About Me</a></li>
+            <li><a href="http://localhost:3000/Retro-Pkm/Signup">SignUp</a></li>
             {props.isLogin ? "" :
-            <li><a style={{color: "white"}}href="http://localhost:3000/login">Login</a></li>            
+            <li><a style={{color: "white"}}href="http://localhost:3000/Retro-Pkm/login">Login</a></li>            
             }
         </Container>
     );
