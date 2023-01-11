@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import ImageHolder from "../components/ImageHolder";
+import MusicButton from "../components/MusicButton";
 import Card from "../components/Card";
 import Pagination from "../components/Pagination";
 import Heart from "../assets/images/pikachu-heart.gif";
@@ -35,29 +36,17 @@ const PokedexBody = styled.div`
     }
 `;
 
-const MusicButton = styled.button`
-    height: 50px;
-    width: 50px;
-    border-radius: 30px;
-    margin: 0 0 0 4%;
-`;
-
-let page = 0;
+let offset = 0;
+let url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`
 
 const Pokedex = () => { 
 
-     const { data , loading, err } =  useFetch(`https://pokeapi.co/api/v2/pokemon/?offset=${page}&limit=20`);
-    // console.log(data)
- 
-       const PlayMusic = () => {
-       var audio = new Audio(GymLeaderBattle);
-         audio.play();
-       }
-       
+     const { data , loading, err } =  useFetch(url);
+
     return (
          <Body>
          <Navbar />
-         <MusicButton onClick={PlayMusic} />
+         <MusicButton audio={GymLeaderBattle} name={"Gym Battle"}/>
          <Title>Retro Pokedex</Title>
          <CenterBody>
          <ImageHolder src={Heart} alt="Pokemon Intro"></ImageHolder>
@@ -66,9 +55,8 @@ const Pokedex = () => {
             {data?.results.map((pokemon, key) => 
             <Card key={key} url={pokemon.url}  name={pokemon.name}  />
          )}
-
          </PokedexBody>}
-         <Pagination />
+         <Pagination offset={offset} url={url} />
         </Body>
         );
  }
