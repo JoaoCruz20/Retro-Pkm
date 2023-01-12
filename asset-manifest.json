@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Retro-Pkm/static/css/main.dba30974.css",
-    "main.js": "/Retro-Pkm/static/js/main.c92c75fa.js",
+    "main.js": "/Retro-Pkm/static/js/main.c5883783.js",
     "static/js/787.b016ced3.chunk.js": "/Retro-Pkm/static/js/787.b016ced3.chunk.js",
     "static/media/gym-leader-battle.mp3": "/Retro-Pkm/static/media/gym-leader-battle.8cb03cee1f381ca8811b.mp3",
     "static/media/intro-battle.gif": "/Retro-Pkm/static/media/intro-battle.6d519e077a171b26c8ba.gif",
@@ -16,11 +16,11 @@
     "static/media/Pkmn.woff2": "/Retro-Pkm/static/media/Pkmn.854a4176a0e2a26dd758.woff2",
     "index.html": "/Retro-Pkm/index.html",
     "main.dba30974.css.map": "/Retro-Pkm/static/css/main.dba30974.css.map",
-    "main.c92c75fa.js.map": "/Retro-Pkm/static/js/main.c92c75fa.js.map",
+    "main.c5883783.js.map": "/Retro-Pkm/static/js/main.c5883783.js.map",
     "787.b016ced3.chunk.js.map": "/Retro-Pkm/static/js/787.b016ced3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dba30974.css",
-    "static/js/main.c92c75fa.js"
+    "static/js/main.c5883783.js"
   ]
 }
