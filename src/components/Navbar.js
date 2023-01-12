@@ -25,18 +25,27 @@ a {
   }
 `;
 
+let protocol = window.location.protocol;
+let hostname = window.location.hostname;
+let pathname = window.location.pathname;
+let port = window.location.port
 
 const Navbar = (props) => {
 
+    //if window.location.href has port then remove window.location.port
+
+    //if it doesn't work, we can use const on window.location.href and then use that const to build the path to other routes ${href}/pokedex
+
+
     return (    
         <Container>
-            <li><a href="http://localhost:3000/Retro-Pkm">Home</a></li>
-            <li><a href="http://localhost:3000/Retro-Pkm/pokedex">Pokedex</a></li>
-            <li><a href="http://localhost:3000/Retro-Pkm/games">Games</a></li>
-            <li><a href="http://localhost:3000/Retro-Pkm/about-me">About Me</a></li>
-            <li><a href="http://localhost:3000/Retro-Pkm/Signup">SignUp</a></li>
+            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm`}>Home</a></li>
+            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm/pokedex`}>Pokedex</a></li>
+            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm/games`}>Games</a></li>
+            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm/about-me`}>About Me</a></li>
+            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm/signup`}>SignUp</a></li>
             {props.isLogin ? "" :
-            <li><a style={{color: "white"}}href="http://localhost:3000/Retro-Pkm/login">Login</a></li>            
+            <li><a style={{color: "white"}}href={`${protocol}//${hostname}:${port}/Retro-Pkm/login`}>Login</a></li>            
             }
         </Container>
     );

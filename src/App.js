@@ -11,28 +11,32 @@ import Login from './pages/login';
 import Games from './pages/games';
 import AboutMe from './pages/about-me';
 import Express from './pages/express';
+import Signup from './pages/signup';
 
 function App() {
   return (
 
     <Router>
       <Switch>
-        <Route caseSensitive={false} path="/" exact component={<Home />}>
+        <Route caseSensitive={false} path="/Retro-Pkm" exact component={<Home />}>
           <Home />
         </Route>
-        <Route caseSensitive={false} path="/pokedex" exact component={<Pokedex />}>
+        <Route caseSensitive={false} path="/Retro-Pkm/pokedex" exact component={<Pokedex />}>
           <Pokedex/>
         </Route>
-        <Route caseSensitive={false} path="/login" exact component={<Login />}>
+        <Route caseSensitive={false} path="/Retro-Pkm/login" exact component={<Login />}>
           <Login/>
         </Route>
-        <Route caseSensitive={false} path="/games" exact component={<Games />}>
+        <Route caseSensitive={false} path="/Retro-Pkm/games" exact component={<Games />}>
           <Games/>
         </Route>
-        <Route caseSensitive={false} path="/about-me" exact component={<AboutMe />}>
+        <Route caseSensitive={false} path="/Retro-Pkm/about-me" exact component={<AboutMe />}>
           <AboutMe/>
         </Route>
-        <Route caseSensitive={false} path="/express-test" exact component={<Express />}>
+        <Route caseSensitive={false} path="/Retro-Pkm/signup" exact component={<Signup />}>
+          <Signup />
+        </Route>
+        <Route caseSensitive={false} path="/Retro-Pkm/express-test" exact component={<Express />}>
           <Express/>
         </Route>
       </Switch>
