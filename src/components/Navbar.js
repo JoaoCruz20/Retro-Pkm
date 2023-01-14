@@ -31,12 +31,12 @@ const Navbar = (props) => {
     return (    
         <Container>
             <li><Link to="/Retro-Pkm">Home</Link></li>
-            <li><Link to="/Retro-Pkm/pokedex">Pokedex</Link></li>
-            <li><Link to="/Retro-Pkm/games">Games</Link></li>
-            <li><Link to="/Retro-Pkm/about-me">AboutMe</Link></li>
-            <li><Link to="/Retro-Pkm/singup">Singup</Link></li>
+            <li><Link to="/pokedex">Pokedex</Link></li>
+            <li><Link to="/games">Games</Link></li>
+            <li><Link to="/about-me">AboutMe</Link></li>
+            <li><Link to="/signup">Singup</Link></li>
             {props.isLogin ? "" :
-            <li><Link style={{color: "white"}} to="/Retro-Pkm/login">Login</Link></li>            
+            <li><Link style={{color: "white"}} to="/login">Login</Link></li>            
             }
         </Container>
     );
