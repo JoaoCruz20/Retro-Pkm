@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import '../assets/fonts/font-Pkmn.css';
+import { Link } from "react-router-dom";
 
 
 const Container = styled.ul`
@@ -25,27 +26,17 @@ a {
   }
 `;
 
-let protocol = window.location.protocol;
-let hostname = window.location.hostname;
-let pathname = window.location.pathname;
-let port = window.location.port
-
 const Navbar = (props) => {
-
-    //if window.location.href has port then remove window.location.port
-
-    //if it doesn't work, we can use const on window.location.href and then use that const to build the path to other routes ${href}/pokedex
-
 
     return (    
         <Container>
-            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm`}>Home</a></li>
-            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm/pokedex`}>Pokedex</a></li>
-            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm/games`}>Games</a></li>
-            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm/about-me`}>About Me</a></li>
-            <li><a href={`${protocol}//${hostname}:${port}/Retro-Pkm/signup`}>SignUp</a></li>
+            <li><Link to="/Retro-Pkm">Home</Link></li>
+            <li><Link to="/Retro-Pkm/pokedex">Pokedex</Link></li>
+            <li><Link to="/Retro-Pkm/games">Games</Link></li>
+            <li><Link to="/Retro-Pkm/about-me">AboutMe</Link></li>
+            <li><Link to="/Retro-Pkm/singup">Singup</Link></li>
             {props.isLogin ? "" :
-            <li><a style={{color: "white"}}href={`${protocol}//${hostname}:${port}/Retro-Pkm/login`}>Login</a></li>            
+            <li><Link style={{color: "white"}} to="/Retro-Pkm/login">Login</Link></li>            
             }
         </Container>
     );
