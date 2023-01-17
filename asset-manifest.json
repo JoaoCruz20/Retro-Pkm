@@ -1,14 +1,19 @@
 {
   "files": {
     "main.css": "/Retro-Pkm/static/css/main.f9ff96d2.css",
-    "main.js": "/Retro-Pkm/static/js/main.fe30d49a.js",
+    "main.js": "/Retro-Pkm/static/js/main.c9081548.js",
     "static/js/787.b016ced3.chunk.js": "/Retro-Pkm/static/js/787.b016ced3.chunk.js",
     "static/media/gym-leader-battle.mp3": "/Retro-Pkm/static/media/gym-leader-battle.8cb03cee1f381ca8811b.mp3",
+    "static/media/sapphire.png": "/Retro-Pkm/static/media/sapphire.ba4a0111bcc4b697827b.png",
     "static/media/intro-battle.gif": "/Retro-Pkm/static/media/intro-battle.6d519e077a171b26c8ba.gif",
     "static/media/pikachu-heart.gif": "/Retro-Pkm/static/media/pikachu-heart.3d1e3492c3670365ee69.gif",
     "static/media/intro-battle-music.mp3": "/Retro-Pkm/static/media/intro-battle-music.2fba9aedf862cc7e8037.mp3",
     "static/media/gameboy-color.png": "/Retro-Pkm/static/media/gameboy-color.766427887e70531bfdd9.png",
     "static/media/fireRed.jpg": "/Retro-Pkm/static/media/fireRed.b525d7238fc9ebde7be6.jpg",
+    "static/media/intro.webp": "/Retro-Pkm/static/media/intro.529a7a677577d2dc2fab.webp",
+    "static/media/diamond.jpg": "/Retro-Pkm/static/media/diamond.8468a7d05394e93faec5.jpg",
+    "static/media/black&white.jpg": "/Retro-Pkm/static/media/black&white.c323da770816145578d5.jpg",
+    "static/media/silver.jpg": "/Retro-Pkm/static/media/silver.deef858c57467b504693.jpg",
     "static/media/Pkmn.svg": "/Retro-Pkm/static/media/Pkmn.e82f5164497ecb763370.svg",
     "static/media/Pkmn.eot": "/Retro-Pkm/static/media/Pkmn.a36bf8db40720af70e6e.eot",
     "static/media/Pkmn.ttf": "/Retro-Pkm/static/media/Pkmn.f0f5b73e272c2844a613.ttf",
@@ -16,11 +21,11 @@
     "static/media/Pkmn.woff2": "/Retro-Pkm/static/media/Pkmn.854a4176a0e2a26dd758.woff2",
     "index.html": "/Retro-Pkm/index.html",
     "main.f9ff96d2.css.map": "/Retro-Pkm/static/css/main.f9ff96d2.css.map",
-    "main.fe30d49a.js.map": "/Retro-Pkm/static/js/main.fe30d49a.js.map",
+    "main.c9081548.js.map": "/Retro-Pkm/static/js/main.c9081548.js.map",
     "787.b016ced3.chunk.js.map": "/Retro-Pkm/static/js/787.b016ced3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f9ff96d2.css",
-    "static/js/main.fe30d49a.js"
+    "static/js/main.c9081548.js"
   ]
 }
