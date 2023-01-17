@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import SignUpForm from "../components/SignUpForm";
 import ImageHolder from "../components/ImageHolder";
-import Heart from "../assets/images/pikachu-heart.gif";
+import Intro from "../assets/images/intro.webp";
 
 const Body = styled.div`
     padding: 30px 0 0 0;
@@ -21,12 +21,16 @@ const CenterBody = styled.div`
 
 const LeftBody = styled.div`
 display: flex;
+justify-content:center;
+margin: 1%;
+border: 4px solid black;
 width: 75%;
 `
 
 const RightBody = styled.div`
 display: flex;
 width 25%;
+height:100%;
 `
 
 const Signup = () => { 
@@ -38,7 +42,7 @@ const Signup = () => {
      <Title>SignUp</Title>
      <CenterBody>
         <LeftBody>
-            <ImageHolder src={Heart} width={"1000px"} height={"800px"} alt="Pokemon Intro"></ImageHolder>
+            <ImageHolder src={Intro} width={"100%"} height={"800px"} alt="Pokemon Intro"></ImageHolder>
         </LeftBody>
         <RightBody>
             <SignUpForm />

@@ -6,6 +6,7 @@ const LoginContainer = styled.div`
 display:flex;
 justify-content:center;
 flex-direction:column;
+margin: 5% 0 0 0;
 `
 
 const LoginForm = styled.form`
@@ -23,18 +24,26 @@ label{
 input{
      border: 2px solid #c7a008;
      border-radius: 5px;
-     padding:15px;
+     padding:15px 100px 15px 100px;
+     margin: 0 0 2% 0;
 }
+
+
 `
 
 const LoginButton = styled.button`
 display:flex;
 justify-content:center;
-margin: 25px 0 0 0;
+margin: 5% 0 0 0;
 border: 2px solid #c7a008;
 border-radius: 5px;
 padding:15px;
 font-family: "Pkmn", Times, serif;
+
+      &:hover{
+          background-color: white;
+     }
+
 `
 
 
@@ -48,6 +57,8 @@ const SignUpForm = () => {
              <input type="text" id="email" name="email" />
              <label for="password">Password</label>
              <input type="password" id="password" name="password" />
+             <label for="checkbox">checkbox</label>
+             <input type="checkbox" id="checkbox" name="checkbox" />
         </LoginForm>
         <LoginButton>Login</LoginButton>
      </LoginContainer>
