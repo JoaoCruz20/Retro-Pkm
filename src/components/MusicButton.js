@@ -56,9 +56,9 @@ const MusicButton = (props) => {
 
     music = props.audio
 
-    useEffect(() => {
+  /*   useEffect(() => {
         PlayMusic(music)
-    },[]); 
+    },[]);  */
 
        const PlayMusic = (music) => {
         let audio = new Audio(music); 

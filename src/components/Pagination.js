@@ -49,7 +49,7 @@ const Pagination = (props) => {
     function NextPage(url) {
         const { data , loading, err } =  useFetch(url);
         nextpage = data?.next 
-        console.log(nextpage)
+       // console.log(nextpage)
     }
 
     return (    

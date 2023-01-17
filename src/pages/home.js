@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import ImageHolder from "../components/ImageHolder";
 import TextHolder from "../components/TextHolder";
 import MusicButton from "../components/MusicButton";
@@ -11,7 +11,7 @@ import IntroBattleMusic from "../assets/music/intro-battle-music.mp3";
 
 
 const Body = styled.div`
-    height:100%;
+    height: 100%;
     background-color: black;
     padding: 30px 0 0 0;
 `;

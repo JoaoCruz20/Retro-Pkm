@@ -49,7 +49,7 @@ const Pokedex = () => {
          <MusicButton audio={GymLeaderBattle} name={"Gym Battle"}/>
          <Title>Retro Pokedex</Title>
          <CenterBody>
-         <ImageHolder src={Heart} alt="Pokemon Intro"></ImageHolder>
+         <ImageHolder src={Heart} width={"400px"} height={"400px"} alt="Pokemon Intro"></ImageHolder>
          </CenterBody>
          {!loading && data && <PokedexBody>
             {data?.results.map((pokemon, key) => 
