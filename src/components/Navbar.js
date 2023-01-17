@@ -18,6 +18,9 @@ li:last-child {
     border: 2px solid #c7a008ff;
     float:right;
 }
+li:hover {
+    background-color: white;
+}
 a {    
      color: #acacacff;
      padding: 10px 10px 10px 10px;
@@ -33,12 +36,13 @@ const Navbar = (props) => {
             <li><Link to="/Retro-Pkm">Home</Link></li>
             <li><Link to="/pokedex">Pokedex</Link></li>
             <li><Link to="/games">Games</Link></li>
-            <li><Link to="/about-me">AboutMe</Link></li>
-            <li><Link to="/signup">Singup</Link></li>
+            <li><Link to="/about-me">About Me</Link></li>
+            <li><Link to="/signup">Signup</Link></li>
             {props.isLogin ? "" :
             <li><Link style={{color: "white"}} to="/login">Login</Link></li>            
             }
         </Container>
+        
     );
   }
   
