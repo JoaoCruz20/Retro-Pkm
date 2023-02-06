@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import ImageHolder from "../components/ImageHolder";
@@ -36,12 +36,16 @@ const PokedexBody = styled.div`
     }
 `;
 
-let offset = 0;
-let url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`
 
+
+let offset = 0;
 const Pokedex = () => { 
 
-     const { data , loading, err } =  useFetch(url);
+    let [searchparam, setSearchParam] = useState(0);
+    offset = searchparam * 20;
+
+    let url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`
+    const { data , loading, err } =  useFetch(url);
 
     return (
          <Body>
@@ -56,7 +60,7 @@ const Pokedex = () => {
             <Card key={key} url={pokemon.url}  name={pokemon.name}  />
          )}
          </PokedexBody>}
-         <Pagination offset={offset} url={url} />
+         <Pagination func={setSearchParam} />
         </Body>
         );
  }

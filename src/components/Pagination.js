@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import '../assets/fonts/font-Pkmn.css';
-import useFetch from "../backend/useFetch";
 
 const Container = styled.ul`
 display:flex;
@@ -38,30 +37,30 @@ button:active {
 `;
 
 let offset
-let url
-let nextpage
 let initialUrl = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`
+let counter = 0
+const Pagination = (props) => { 
 
-const Pagination = (props) => {
-    url = props.url
-    offset = props.offset
+    // Trick here was I props a useState into the child, but could've been a function
+    // offset calculations are page number multiplied by 20, ex: 1*20 = 20, 2*20=40, 3*20
 
-    function NextPage(url) {
-        const { data , loading, err } =  useFetch(url);
-        nextpage = data?.next 
-       // console.log(nextpage)
+    function NextPage(value) {
+        if(value >= 0){
+            counter = value;
+            props.func(counter)
+        }
     }
 
     return (    
      <Container>
         <li>
-            <button aria-label="Previous" onClick={NextPage()}><span>&laquo;</span>Previous</button>
+            <button aria-label="Previous" onClick={() => NextPage(counter - 1)}><span>&laquo;</span>Previous</button>
         </li>
-            <button aria-label="Next" onClick={NextPage()}>1</button>
-            <button aria-label="Next" onClick={NextPage()}>2</button>
-            <button aria-label="Next" onClick={NextPage()}>3</button>
+            <button aria-label="Next" onClick={() => NextPage(counter + 1)}>{counter + 1}</button>
+            <button aria-label="Next" onClick={() => NextPage(counter + 2)}>{counter + 2}</button>
+            <button aria-label="Next" onClick={() => NextPage(counter + 3)}>{counter + 3}</button>
         <li class="page-item">
-            <button aria-label="Next" onClick={NextPage(props.url)}>Next
+            <button aria-label="Next" onClick={() => NextPage(counter + 1)}>Next
             <span>&raquo;</span></button>
         </li>
     </Container>    
