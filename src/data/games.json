@@ -11,7 +11,7 @@
         },
         {
             "title": "Gold & Silver",
-            "image": "",
+            "image": "../assets/images/games/silver.jpg",
             "releaseY": 1999,
             "gen": 2,
             "info": [
@@ -20,7 +20,7 @@
         },
         {
             "title": "Ruby & Sapphire",
-            "image": "",
+            "image": "../assets/images/games/sapphire.jpg",
             "releaseY": 2002,
             "gen": 3,
             "info": [
@@ -29,7 +29,7 @@
         },
         {
             "title": "Diamond & Pearl",
-            "image": "",
+            "image": "../assets/images/games/diamond.jpg",
             "releaseY": 2006,
             "gen": 4,
             "info": [

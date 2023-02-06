@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-expressions */
 import React from "react";
 import styled from "styled-components";
 import TimelineCard from "../components/TimelineCard";
 import gamesData from "../data/games.json";
-import {FireRed, Silver} from "../assets/images/index.js";
+import urls from "../assets/images/games/index-games";
 
 
 const Container = styled.div`
@@ -40,17 +41,17 @@ li {
     }
 
 }
-
-
 `;
 
-const Timeline = (props) => {
+for(let i=0; i<urls.length; i++){
+   gamesData.games[i].image = urls[i]
+}
 
+const Timeline = (props) => {
     const TimelineComponent = gamesData?.games?.map((game, index) =>{
-        console.log(game.image)
         return (
             <>
-               <li><TimelineCard index={`game-${index}`} name={game.title} year={game.releaseY} src={game?.image} label={game.title} /></li>
+               <li key={`game-list`}><TimelineCard key={`game-${index}`} name={game.title} year={game.releaseY} src={game?.image} label={game.title} /></li>
             </>
         )
     })
