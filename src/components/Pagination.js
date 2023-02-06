@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import '../assets/fonts/font-Pkmn.css';
 
-const Container = styled.ul`
+const Container = styled.div`
 display:flex;
 justify-content:center;
-margin: 2.5% 0 0 5%;
+margin: 2.5% 0 0 0%;
 
 li{
     list-style: none;
@@ -40,7 +40,7 @@ let offset
 let initialUrl = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`
 let counter = 0
 const Pagination = (props) => { 
-
+    counter = props.init;
     // Trick here was I props a useState into the child, but could've been a function
     // offset calculations are page number multiplied by 20, ex: 1*20 = 20, 2*20=40, 3*20
 

@@ -42,6 +42,7 @@ let offset = 0;
 const Pokedex = () => { 
 
     let [searchparam, setSearchParam] = useState(0);
+    // off set should be an useState so that it resets with
     offset = searchparam * 20;
 
     let url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`
@@ -60,7 +61,7 @@ const Pokedex = () => {
             <Card key={key} url={pokemon.url}  name={pokemon.name}  />
          )}
          </PokedexBody>}
-         <Pagination func={setSearchParam} />
+         <Pagination func={setSearchParam} init={searchparam} />
         </Body>
         );
  }
