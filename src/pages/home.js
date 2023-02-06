@@ -31,7 +31,13 @@ const FirstBody = styled.div`
 const SecondBody = styled.div`
     display:flex;
     justify-content:center;
+    flex-wrap:wrap;
     background-color: #ffffffff;
+    padding: 2% 0 1% 0;
+
+    img{
+        margin: 1%;
+    }
 `;
 
 
@@ -48,13 +54,11 @@ const paragraphText = "Lorem Ipsum is simply dummy text of the printing and type
          <MusicButton audio={IntroBattleMusic} name={"Intro Battle Music"}/>
          <Title>Welcome to Retro Pokemon</Title>
          <FirstBody>
-            <ImageHolder src={IntroBattle} alt="Pokemon Intro"></ImageHolder>
+            <ImageHolder src={IntroBattle} alt="Pokemon Intro" width="400px" height="368px"></ImageHolder>
         </FirstBody>
         <SecondBody>
             <TextHolder title="Introducing the Idea" paragraph={paragraphText}/>
-            <ImageHolder src={GameBoy} alt="Gameboy" width="330px" height="600px">
-                <ImageHolder style={{zIndex: 3}} src={IntroBattle} alt="Pokemon Intro"></ImageHolder>
-            </ImageHolder>
+            <ImageHolder src={GameBoy} alt="Gameboy" width="290px" height="500px"></ImageHolder>
         </SecondBody>
         <Footer />
         </Body>

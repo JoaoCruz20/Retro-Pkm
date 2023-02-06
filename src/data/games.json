@@ -2,7 +2,7 @@
     "games":[
         {
             "title": "Red, Blue & Green",
-            "image": "../assets/images/games/fireRed.jpg",
+            "image": "",
             "releaseY": 1996,
             "gen": 1,
             "info": [
@@ -11,7 +11,7 @@
         },
         {
             "title": "Gold & Silver",
-            "image": "../assets/images/games/silver.jpg",
+            "image": "",
             "releaseY": 1999,
             "gen": 2,
             "info": [
@@ -20,7 +20,7 @@
         },
         {
             "title": "Ruby & Sapphire",
-            "image": "../assets/images/games/sapphire.jpg",
+            "image": "",
             "releaseY": 2002,
             "gen": 3,
             "info": [
@@ -29,7 +29,7 @@
         },
         {
             "title": "Diamond & Pearl",
-            "image": "../assets/images/games/diamond.jpg",
+            "image": "",
             "releaseY": 2006,
             "gen": 4,
             "info": [
