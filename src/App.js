@@ -12,6 +12,7 @@ import Games from './pages/games';
 import AboutMe from './pages/about-me';
 import Express from './pages/express';
 import Signup from './pages/signup';
+import Item from './pages/item';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
           <Signup />
         </Route>
         <Route caseSensitive={false} path="/Retro-Pkm/express-test" exact component={<Express />}>
+          <Express/>
+        </Route>
+        <Route caseSensitive={false} path="/item" exact component={<Item />}>
           <Express/>
         </Route>
       </Switch>

@@ -8,6 +8,7 @@ import Pagination from "../components/Pagination";
 import Heart from "../assets/images/pikachu-heart.gif";
 import GymLeaderBattle from "../assets/music/gym-leader-battle.mp3";
 import useFetch from "../backend/useFetch";
+import { Link } from "react-router-dom";
 
 const Body = styled.div`
     background-color: black;
@@ -57,8 +58,14 @@ const Pokedex = () => {
          <ImageHolder src={Heart} width={"400px"} height={"400px"} alt="Pokemon Intro"></ImageHolder>
          </CenterBody>
          {!loading && data && <PokedexBody>
-            {data?.results.map((pokemon, key) => 
-            <Card key={key} url={pokemon.url}  name={pokemon.name}  />
+            {data?.results.map((pokemon, key) =>
+             <Link to={{
+                pathname:"/search",
+                hash: `${key}`
+            }} state={{
+                data: pokemon
+            }}><Card key={key} url={pokemon.url}  name={pokemon.name}></Card></Link> 
+            
          )}
          </PokedexBody>}
          <Pagination func={setSearchParam} init={searchparam} />
