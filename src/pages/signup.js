@@ -25,6 +25,11 @@ justify-content:center;
 margin: 1%;
 border: 4px solid black;
 width: 75%;
+
+@media (max-width: 1368px) {
+    width:0%;
+    border:0;
+  }
 `
 
 const RightBody = styled.div`
@@ -42,7 +47,7 @@ const Signup = () => {
      <Title>SignUp</Title>
      <CenterBody>
         <LeftBody>
-            <ImageHolder src={Intro} width={"100%"} height={"800px"} alt="Pokemon Intro"></ImageHolder>
+            <ImageHolder src={Intro} width={"100%"} height={"750px"} alt="Pokemon Intro"></ImageHolder>
         </LeftBody>
         <RightBody>
             <SignUpForm />
