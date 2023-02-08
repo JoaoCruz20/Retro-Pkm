@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import ImageHolder from "../components/ImageHolder";
@@ -7,7 +7,7 @@ import Card from "../components/Card";
 import Pagination from "../components/Pagination";
 import Heart from "../assets/images/pikachu-heart.gif";
 import GymLeaderBattle from "../assets/music/gym-leader-battle.mp3";
-import useFetch from "../backend/useFetch";
+import fetcher from "../backend/fetcher";
 import { Link } from "react-router-dom";
 
 const Body = styled.div`
@@ -37,17 +37,23 @@ const PokedexBody = styled.div`
     }
 `;
 
-
-
 let offset = 0;
 const Pokedex = () => { 
 
     let [searchparam, setSearchParam] = useState(0);
+    let [results, setResults] = useState();
+    
     // off set should be an useState so that it resets with
     offset = searchparam * 20;
 
     let url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`
-    const { data , loading, err } =  useFetch(url);
+
+    useEffect(()=> {
+        const data = fetcher(url);
+        data.then((res) => setResults(res))
+    }, [url])
+
+    console.log(results)
 
     return (
          <Body>
@@ -57,14 +63,16 @@ const Pokedex = () => {
          <CenterBody>
          <ImageHolder src={Heart} width={"400px"} height={"400px"} alt="Pokemon Intro"></ImageHolder>
          </CenterBody>
-         {!loading && data && <PokedexBody>
-            {data?.results.map((pokemon, key) =>
+         {results && <PokedexBody>
+            {results?.results?.map((pokemon, index) =>
              <Link to={{
-                pathname:"/search",
-                hash: `${key}`
-            }} state={{
-                data: pokemon
-            }}><Card key={key} url={pokemon.url}  name={pokemon.name}></Card></Link> 
+                pathname:"/item",
+                hash: `${index}`,
+                state:{
+                    name: pokemon?.name,
+                    url: pokemon?.url 
+                }
+            }}><Card key={`index-${index}`} url={pokemon?.url}  name={pokemon?.name}></Card></Link> 
             
          )}
          </PokedexBody>}
