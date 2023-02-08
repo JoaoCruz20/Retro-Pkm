@@ -40,14 +40,16 @@ let offset
 let initialUrl = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`
 let counter = 0
 const Pagination = (props) => { 
-    counter = props.init;
+    counter = props?.init;
+
+    // pagination bug, it is reseting to the center of the page even when it loads new info
     // Trick here was I props a useState into the child, but could've been a function
     // offset calculations are page number multiplied by 20, ex: 1*20 = 20, 2*20=40, 3*20
 
     function NextPage(value) {
         if(value >= 0){
             counter = value;
-            props.func(counter)
+            props?.func(counter)
         }
     }
 
