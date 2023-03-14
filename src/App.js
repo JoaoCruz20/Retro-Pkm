@@ -5,14 +5,14 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import Home from "../src/pages/home";
+import Home from "./pages/home";
 import Pokedex from './pages/pokedex';
 import Login from './pages/login';
 import Games from './pages/games';
 import AboutMe from './pages/about-me';
 import Express from './pages/express';
 import Signup from './pages/signup';
-import Item from './pages/item';
+import Pokemon from './pages/pokemon';
 
 function App() {
   return (
@@ -40,8 +40,8 @@ function App() {
         <Route caseSensitive={false} path="/Retro-Pkm/express-test" exact component={<Express />}>
           <Express/>
         </Route>
-        <Route caseSensitive={false} path="/item" exact component={<Item />}>
-          <Express/>
+        <Route caseSensitive={false} path="/pokedex/pokemon" exact component={<Pokemon />}>
+          <Pokemon/>
         </Route>
       </Switch>
     </Router>

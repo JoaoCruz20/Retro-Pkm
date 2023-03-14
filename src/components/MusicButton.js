@@ -60,6 +60,9 @@ const MusicButton = (props) => {
         PlayMusic(music)
     },[]);  */
 
+
+    // When you redo this feature, search for the HTMLMediaElement - link to MDN docs - https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement
+
        const PlayMusic = (music) => {
         let audio = new Audio(music); 
             audio.play();
