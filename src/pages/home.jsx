@@ -4,10 +4,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ImageHolder from "../components/ImageHolder";
 import TextHolder from "../components/TextHolder";
-import MusicButton from "../components/MusicButton";
 import IntroBattle from "../assets/images/intro-battle.gif";
 import GameBoy from "../assets/images/gameboy-color.png";
 import IntroBattleMusic from "../assets/music/intro-battle-music.mp3";
+import MusicCard from "../components/MusicButtonv2";
 
 
 const Body = styled.div`
@@ -51,7 +51,7 @@ const paragraphText = "Lorem Ipsum is simply dummy text of the printing and type
         <Body>
          <Navbar>
          </Navbar>
-         <MusicButton audio={IntroBattleMusic} name={"Intro Battle Music"}/>
+         <MusicCard audio={IntroBattleMusic} name={"Intro Battle Music"}/>
          <Title>Welcome to Retro Pokemon</Title>
          <FirstBody>
             <ImageHolder src={IntroBattle} alt="Pokemon Intro" width="400px" height="368px"></ImageHolder>
